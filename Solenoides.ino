@@ -1,4 +1,4 @@
-int pino[] = {2,3,4,5,6,7,8,9};
+int pino[] = {5,6,7,8,9,10,11,12};
 
 byte input = 0;
 boolean stringComplete = false;
@@ -17,11 +17,8 @@ void setup() {
 
 void loop() {
   if (stringComplete) {
-    for (int i=0; i<=7; i++) {
-      digitalWrite(pino[i], bitRead(input, i));   
-      Serial.print(bitRead(input, i));
-    }
-    Serial.println(0000);
+   Serial.println(input,BIN);
+    for (int i=0; i<=7; i++) digitalWrite(pino[i], bitRead(input, i));   
     stringComplete = false;
   }
 }
@@ -47,4 +44,3 @@ void serialEvent() {
     
   }
 }
-
